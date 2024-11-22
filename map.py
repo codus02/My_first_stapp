@@ -5,7 +5,7 @@ import folium
 from streamlit_folium import st_folium
 
 # 데이터 로드 및 전처리
-birth_rate_file = "C:/Users/chaet/Downloads/연령별_출산율_및_합계출산율_행정구역별__20241120143517.csv"
+birth_rate_file = data/연령별_출산율_및_합계출산율_행정구역별__20241120143517.csv
 geojson_file = "C:/Users/chaet/Downloads/data/gdf_korea_sido_2022.json"
 
 # 출생률 데이터
