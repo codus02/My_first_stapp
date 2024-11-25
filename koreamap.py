@@ -57,7 +57,7 @@ folium.Choropleth(
     geo_data=geo,
     data=birth,
     columns=['행정구역', '출생률'],
-    key_on='feature.properties.행정구역',  # GeoJSON의 '행정구역' 속성과 매칭
+    key_on='feature.properties.NAME',  # GeoJSON의 '행정구역' 속성과 매칭
     fill_color='BuPu',  # 색상 팔레트
     fill_opacity=0.7,
     line_opacity=0.2,
