@@ -7,7 +7,7 @@ import streamlit as st
 from streamlit_folium import st_folium  # st_folium을 사용하여 Folium 지도 렌더링
 
 # GeoJSON 파일 경로
-geojson_file = "C:/Users/chaet/Downloads/gg_map.json"
+geojson_file = "data/gg_map.json"
 
 # GeoJSON 파일 읽기
 geo_data = gpd.read_file(geojson_file)
@@ -16,7 +16,7 @@ geo_data = gpd.read_file(geojson_file)
 geo_data = geo_data.rename(columns={'NAME': '행정구역'})
 
 # CSV 파일 경로
-file_path = "C:/Users/chaet/Downloads/연령별_출산율_및_합계출산율_행정구역별__20241121121629.csv"
+file_path = "data/연령별_출산율_및_합계출산율_행정구역별__20241121121629.csv"
 
 # 데이터 읽기
 data = pd.read_csv(file_path, header=1, encoding='cp949')
