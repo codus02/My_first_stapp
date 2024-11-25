@@ -2,7 +2,7 @@ os
 pandas
 
 streamlit
-streamlit_folium
+streamlit-folium
 
 geopandas
 altair
