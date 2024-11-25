@@ -1,13 +1,4 @@
-os
-pandas
-
 streamlit
-streamlit-folium
-
 geopandas
-altair
 folium
-json
-matplotlib.pyplot
-matplotlib
-
+pandas
