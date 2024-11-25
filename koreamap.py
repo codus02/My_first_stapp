@@ -11,7 +11,7 @@ from streamlit_folium import st_folium
 
 
 # GeoJSON 파일 경로
-geojson_file = "<data>/gg_map.json"
+geojson_file = "data/gg_map.json"
 
 # GeoJSON 파일 읽기
 geo_data = gpd.read_file(geojson_file)
@@ -28,7 +28,7 @@ print(json.dumps(data,indent=4,ensure_ascii=False)[0:400])
 
 
 # 파일 경로 설정 (올바른 파일 이름과 경로를 입력)
-file_path = "<data>/연령별_출산율_및_합계출산율_행정구역별__20241121121629.csv"
+file_path = "data/연령별_출산율_및_합계출산율_행정구역별__20241121121629.csv"
 
 # 데이터 읽기 (첫 줄은 헤더로 제거)
 data = pd.read_csv(file_path, header=1, encoding='cp949')
