@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 
 
 # GeoJSON 파일 경로
-geojson_file = "C:/Users/chaet/Downloads/gg_map.json"
+geojson_file = "<data>/gg_map.json"
 
 # GeoJSON 파일 읽기
 geo_data = gpd.read_file(geojson_file)
