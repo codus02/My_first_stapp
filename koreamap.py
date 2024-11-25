@@ -56,7 +56,7 @@ gu_map = folium.Map(location=korea_center, zoom_start=7, tiles='cartodbpositron'
 folium.Choropleth(
     geo_data=geo_data,
     data=data,
-    columns=('행정구역', '출생률'),
+    columns=['행정구역', '출생률'],
     key_on='feature.properties.행정구역',  # GeoJSON의 '행정구역' 속성과 매칭
     fill_color='BuPu',  # 색상 팔레트
     fill_opacity=0.7,
