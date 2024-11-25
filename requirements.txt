@@ -9,5 +9,5 @@ altair
 folium
 json
 matplotlib.pyplot
-
+matplotlib
 
