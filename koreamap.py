@@ -6,7 +6,8 @@ import json
 
 import altair as alt
 import matplotlib.pyplot as plt
-
+import streamlit as st
+from streamlit_folium import st_folium
 
 
 # GeoJSON 파일 경로
@@ -84,6 +85,11 @@ data['행정구역'] = data['행정구역'].replace('통합창원시', '창원�
 title='시군구 출생률'
 
 korea_center = [36.505354, 127.704341]
+
+# Streamlit 애플리케이션
+st.title("전국 출생률 Choropleth 지도")
+st.write("이 애플리케이션은 전국 각 시도의 출생률 데이터를 시각화합니다.")
+
 
 
 gu_map=folium.Map(
