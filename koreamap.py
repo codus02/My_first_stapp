@@ -3,7 +3,6 @@ import pandas as pd
 import geopandas as gpd 
 import folium
 import streamlit as st
-from streamlit_folium import st_folium
 
 # GeoJSON 파일 경로
 geojson_file = "data/gg_map.json"
@@ -13,7 +12,7 @@ geo = gpd.read_file(geojson_file)
 
 # GeoDataFrame 열 이름 변경
 geo = geo.rename(columns={'NAME': '행정구역'})
-geo.to_file("data/updated_gg_map.json", driver="GeoJSON")  # 저장 위치 확인
+geo.to_file("data/updated_gg_map.json", driver="GeoJSON")
 
 # CSV 파일 경로
 file_path = "data/연령별_출산율_및_합계출산율_행정구역별__20241121121629.csv"
@@ -45,10 +44,16 @@ folium.Choropleth(
     legend_name='출생률'
 ).add_to(gu_map)
 
-# Streamlit에서 Folium 지도 렌더링
+# Folium 지도를 HTML 파일로 저장
+map_path = "map.html"
+gu_map.save(map_path)
+
+# Streamlit에서 HTML 파일 렌더링
 st.title("전국 출생률 Choropleth 지도")
 st.write("이 애플리케이션은 전국 각 시도의 출생률 데이터를 시각화합니다.")
-st_folium(gu_map, width=800, height=600)
+with open(map_path, "r", encoding="utf-8") as f:
+    html_content = f.read()
 
+st.components.v1.html(html_content, width=800, height=600)
 
 
