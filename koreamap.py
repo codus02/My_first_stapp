@@ -67,7 +67,8 @@ folium.Choropleth(
 # Streamlit에서 Folium 지도 렌더링
 st.title("전국 출생률 Choropleth 지도")
 st.write("이 애플리케이션은 전국 각 시도의 출생률 데이터를 시각화합니다.")
-st_folium(gu_map, width=800, height=600)
+
+st_folium(gu_map, width=800, height=600, returned_objects=[])
 
 
 
