@@ -14,6 +14,7 @@ geo = gpd.read_file(geojson_file)
 
 # GeoDataFrame 열 이름 변경
 geo = geo.rename(columns={'NAME': '행정구역'})
+geo.to_file("updated_gg_map.json", driver="GeoJSON")
 
 # CSV 파일 경로
 file_path = "data/연령별_출산율_및_합계출산율_행정구역별__20241121121629.csv"
@@ -52,17 +53,19 @@ else:
 korea_center = [36.505354, 127.704341]  # 대한민국 중심 좌표
 gu_map = folium.Map(location=korea_center, zoom_start=7, tiles='cartodbpositron')
 
-# Choropleth 지도 추가
+
+
 folium.Choropleth(
-    geo_data=geo,
+    geo_data="updated_gg_map.json",
     data=birth,
     columns=['행정구역', '출생률'],
-    key_on='feature.properties.NAME',  # GeoJSON의 '행정구역' 속성과 매칭
-    fill_color='BuPu',  # 색상 팔레트
+    key_on='feature.properties.행정구역',
+    fill_color='BuPu',
     fill_opacity=0.7,
     line_opacity=0.2,
     legend_name='출생률'
 ).add_to(gu_map)
+
 
 # Streamlit에서 Folium 지도 렌더링
 st.title("전국 출생률 Choropleth 지도")
